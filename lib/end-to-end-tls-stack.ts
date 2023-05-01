@@ -27,7 +27,6 @@ export class EndToEndTlsStack extends cdk.Stack {
       logging: LogDrivers.awsLogs({streamPrefix: 'my-tls-service'}),
     });
 
-    // Instantiate an Amazon ECS Service
     const ecsService = new FargateService(this, 'Service', {
       cluster,
       taskDefinition,
@@ -40,7 +39,6 @@ export class EndToEndTlsStack extends cdk.Stack {
     });
 
     const cert = Certificate.fromCertificateArn(this, 'albcert', StringParameter.valueForStringParameter(this, 'cert-arn'));
-
 
     const listener = alb.addListener('e2e-listener', {
       port: 443,
