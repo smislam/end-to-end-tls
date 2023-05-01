@@ -2,7 +2,7 @@
 
 This example uses encrypted connection all the way to your application using TLS.  This is a requirement for Zero-Trust Architecture(https://www.nist.gov/publications/zero-trust-architecture).
 
-It enables encrypted traffic between the browser and AWS ALB and then again from AWS ALB to your Spring boot application running in ECS container.  The ALB offloads the first SSL/TLS certificate.  A a new TLS connection is created using the Certificate (FIPS Complaint) used in the Spring Boot application from ALB which then terminates into your application.
+It enables encrypted traffic between the browser and AWS ALB and then again from AWS ALB to your Spring boot application running in ECS container.  The ALB offloads the first SSL/TLS certificate.  A new TLS connection is created using the Certificate (FIPS Complaint) used in the Spring Boot application from ALB which then terminates into your application.
 
 ## Architecture
 ![image](e2e-tls-architecture.PNG "End to End Encryption with AWS ALB and Spring Boot")
